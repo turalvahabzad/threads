@@ -7,8 +7,8 @@ public class MyRunnable1 implements Runnable{
       for(int i=0;i<100;i++){
 
           try {
-              FileUtility.writeTextFile("Salam  "+System.nanoTime(), "myfile.txt");
-          } catch (IOException e) {
+              FileUtility.writeTextToFile0("Salam  "+System.nanoTime(), "myfile1.txt");
+          }  catch (Exception e) {
               throw new RuntimeException(e);
           }
       }

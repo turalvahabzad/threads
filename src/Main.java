@@ -9,15 +9,14 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
 
 
-MyRunnable1 runnable1=new MyRunnable1();
-MyRunnable2 runnable2=new MyRunnable2();
-        ExecutorService executorService= Executors.newFixedThreadPool(2);
+FileWriter fileWriter1=new FileWriter(100,"Salam", FileWriter.WRITE_TYPE.IO,"myfile1.txt");
+FileWriter fileWriter2=new FileWriter(100,"Sagol", FileWriter.WRITE_TYPE.NIO,"myfile2.txt");
 
-        executorService.submit(runnable1);
-        executorService.submit(runnable2);
-
-        executorService.shutdown();
-        executorService.awaitTermination(1, TimeUnit.DAYS);
+ExecutorService executorService=Executors.newFixedThreadPool(2);
+executorService.submit(fileWriter1);
+executorService.submit(fileWriter2);
+executorService.shutdown();
+executorService.awaitTermination(1,TimeUnit.DAYS);
 
 
 
